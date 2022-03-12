@@ -2,7 +2,7 @@ import { WorldBankResponse } from "./interfaces/worldBank"
 
 export default class WorldBankService {
 
-    async getTables(): Promise<WorldBankResponse> {
+    async getTables(): Promise<WorldBankResponse[]> {
         const uri = "https://api.worldbank.org/v2/country/br?format=json"
 
         const response = await fetch(uri, {
@@ -21,11 +21,11 @@ export default class WorldBankService {
             }
           })
           .then (resJson => {
-              console.log(resJson[1])
             return resJson
           })
           .catch(err => console.log(err))
-          console.log('resonse after all', response)
-          return response as WorldBankResponse
+          let resultSet :WorldBankResponse[]=[]
+          resultSet.push(response[1])
+          return response[1];
     }
 }
