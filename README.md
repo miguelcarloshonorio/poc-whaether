@@ -17,16 +17,35 @@
 yarn install
 ```
 
+## Commit with commitlint
+
+```sh
+yarn commit
+```
+
 ## Usage
 
 ```sh
-yarn run start
+yarn start
 ```
 
 ## Run tests
 
 ```sh
-yarn run test
+yarn test
+```
+
+## Run tests with coverage
+
+```sh
+yarn coverage
+```
+
+## Build (localhost:3000)
+
+```sh
+yarn build
+node server.js
 ```
 
 ## Author

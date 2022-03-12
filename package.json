@@ -39,7 +39,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint . --ext=ts,tsx --fix;  exit 0",
     "prepare": "husky install",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "coverage": "yarn test --coverage --watchAll=false"
   },
   "husky": {
     "hooks": {
