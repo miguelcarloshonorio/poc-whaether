@@ -8,6 +8,7 @@ import { WorldBankResponse } from './gateways/interfaces/worldBank';
 import { useEffect } from 'react';
 import WorldBankService from './gateways/worldbankService';
 import CountryTable from './components/table';
+import LineChart from './components/chart';
 
 function Copyright() {
   return (
@@ -26,10 +27,11 @@ export default function App() {
   const [country, SetCountry] = useState<WorldBankResponse[]>([]);
 
   useEffect(() => {
+
     async function fetchMyAPI() {
       let response = await new WorldBankService().getTables()
-      
-      if (response.length > 0) {
+
+      if (response) {
         SetCountry(response)
       }
     }
@@ -45,8 +47,9 @@ export default function App() {
           Welcome here
         </Typography>
         <CountryTable dataSource={country} />
-        <Copyright />
       </Box>
+      <LineChart />
+      <Copyright />
     </Container>
   );
 }
